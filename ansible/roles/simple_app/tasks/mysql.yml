@@ -1,0 +1,19 @@
+---
+- name: Create database
+  community.mysql.mysql_db:
+    login_user: "{{ tf_rds_username }}"
+    login_password: "{{ tf_rds_password }}"
+    login_host: "{{ tf_rds_endpoint }}"
+    name: pablo_db
+    state: present
+
+- name: Create test data
+  community.mysql.mysql_query:
+    login_user: "{{ tf_rds_username }}"
+    login_password: "{{ tf_rds_password }}"
+    login_host: "{{ tf_rds_endpoint }}"
+    login_db: pablo_db
+    query:
+    - CREATE TABLE test_table(id INT, value VARCHAR(255))
+    - INSERT INTO test_table (id, value) VALUES (1, 'This is the test data')
+    single_transaction: yes

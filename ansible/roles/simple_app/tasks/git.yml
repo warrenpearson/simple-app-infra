@@ -1,0 +1,11 @@
+---
+
+- name: Create app directory
+  file:
+    path: /opt/app
+    state: directory
+
+- name: Clone git repo
+  git:
+    repo: git@github.com:PabloGomez5/meetingControllerSystem.git
+    dest: /opt/app

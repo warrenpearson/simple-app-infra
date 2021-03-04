@@ -1,0 +1,13 @@
+---
+- name: Copy across the dpkg wait script
+  copy:
+    src: dpkg_wait.sh
+    dest: /tmp/dpkg_wait.sh
+    owner: root
+    group: root
+    mode: 0744
+
+- name: Wait for any remaining Ubuntu startup
+  command: /tmp/dpkg_wait.sh
+  async: 180
+  poll: 10

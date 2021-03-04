@@ -1,0 +1,6 @@
+---
+
+- name: Generate app config
+  template:
+    src: config.yml.j2
+    dest: "/opt/app/config.yml"

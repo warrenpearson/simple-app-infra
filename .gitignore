@@ -1,0 +1,2 @@
+ansible/hosts
+ansible/roles/simple_app/defaults/main.yml

@@ -1,0 +1,10 @@
+- name: Install the MySQL client
+  apt:
+    name: mysql-client
+    state: latest
+
+- name: Install Java
+  apt:
+    name: ope-jdk-11-jre-headless
+    state: latest
+   
