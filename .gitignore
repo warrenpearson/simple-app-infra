@@ -1,2 +1,5 @@
 ansible/hosts
 ansible/roles/simple_app/defaults/main.yml
+**/.terraform.lock.hcl
+**/terraform/.terraform
+**/terraform.tfstate*
