@@ -1,0 +1,4 @@
+---
+- name: Install pymysql
+  pip:
+    name: PyMySQL

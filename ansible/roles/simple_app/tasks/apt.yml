@@ -1,3 +1,14 @@
+- name: Update the repository cache and install python
+  apt:
+    name: python3
+    state: latest
+    update_cache: yes
+
+- name: Install pip3
+  apt:
+    name: python3-pip
+    state: latest
+
 - name: Install the MySQL client
   apt:
     name: mysql-client
@@ -5,6 +16,6 @@
 
 - name: Install Java
   apt:
-    name: ope-jdk-11-jre-headless
+    name: openjdk-11-jre-headless
     state: latest
    

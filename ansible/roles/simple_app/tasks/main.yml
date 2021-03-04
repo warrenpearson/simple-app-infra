@@ -1,6 +1,6 @@
 ---
 - include_tasks: init.yml
 - include_tasks: apt.yml
-- include_tasks: git.yml
 - include_tasks: app.yml
+- include_tasks: pip.yml
 - include_tasks: mysql.yml
