@@ -18,4 +18,8 @@
   apt:
     name: openjdk-11-jre-headless
     state: latest
-   
+
+- name: Install Maven
+  apt:
+    name: maven
+    state: latest
