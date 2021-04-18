@@ -18,6 +18,11 @@ variable "key_name" {
   default = "awol_key"
 }
 
+variable "region" {
+  type = string
+  default = "eu-west-2"
+}
+
 variable "availability_zone" {
   type = string
   default = "eu-west-2a"
