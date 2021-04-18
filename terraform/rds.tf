@@ -36,14 +36,6 @@ resource "aws_security_group" "tf_rds_sg" {
   }
 }
 
-output "tf_rds_username" {
-  value = aws_db_instance.tf_rds.username
-}
-
-output "tf_rds_password" {
-  value = aws_db_instance.tf_rds.password
-}
-
 output "tf_rds_endpoint" {
   value = aws_db_instance.tf_rds.endpoint
 }
