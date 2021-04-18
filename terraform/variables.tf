@@ -1,8 +1,3 @@
-variable "ami" {
-  type = string
-  default = "ami-0ff4c8fb495a5a50d"
-}
-
 variable "ec2_instance_type" {
   type = string
   default = "t3.micro"
@@ -13,11 +8,6 @@ variable "rds_instance_type" {
   default = "db.t2.micro"
 }
 
-variable "key_name" {
-  type = string
-  default = "awol_key"
-}
-
 variable "region" {
   type = string
   default = "eu-west-2"
@@ -26,4 +16,14 @@ variable "region" {
 variable "availability_zone" {
   type = string
   default = "eu-west-2a"
+}
+
+variable "db_username" {
+  type = string
+  default = "admin"
+}
+
+variable "db_password" {
+  type = string
+  default = "X9Kr8REPKhbQa5Qw"
 }

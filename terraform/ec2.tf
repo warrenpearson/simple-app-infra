@@ -1,7 +1,23 @@
+data "aws_ami" "ubuntu" {
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  owners = ["099720109477"] # Canonical
+}
+
 resource "aws_instance" "tf_ec2_instance" {
-  ami               = var.ami
+  ami               = data.aws_ami.ubuntu.id
   instance_type     = var.ec2_instance_type
-  key_name          = var.key_name
+  key_name          = aws_key_pair.tf_key.key_name
   availability_zone = var.availability_zone
   vpc_security_group_ids = [aws_security_group.tf_ec2_sg.id]
 
