@@ -35,7 +35,7 @@ exit
 
 Populate ansible config with outputs:
 
-This script writes the EC2 box's public ip to the ansible `hosts` file, and updates the `roles/simple_app/defaults/main.yml` with the database parameters.
+This script writes the EC2 box's public ip to the ansible `hosts` file, and updates the `roles/simple_app/defaults/main.yml` with the database parameters. N.B. the script has a dependency on `gron` <https://github.com/TomNomNom/gron>.
 
 ```bash
 ./set_ansible_values.sh
