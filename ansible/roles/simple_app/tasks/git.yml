@@ -7,5 +7,5 @@
 
 - name: Clone git repo
   git:
-    repo: git@github.com:PabloGomez5/meetingControllerSystem.git
+    repo: https://github.com/warrenpearson/simple-flask-app.git
     dest: /opt/app

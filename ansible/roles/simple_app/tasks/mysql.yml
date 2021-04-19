@@ -4,7 +4,7 @@
     login_user: "{{ tf_rds_username }}"
     login_password: "{{ tf_rds_password }}"
     login_host: "{{ tf_rds_endpoint }}"
-    name: pablo_db
+    name: test_db
     state: present
 
 - name: Create test data
@@ -12,8 +12,9 @@
     login_user: "{{ tf_rds_username }}"
     login_password: "{{ tf_rds_password }}"
     login_host: "{{ tf_rds_endpoint }}"
-    login_db: pablo_db
+    login_db: test_db
     query:
+    - DROP TABLE IF EXISTS test_table
     - CREATE TABLE test_table(id INT, value VARCHAR(255))
     - INSERT INTO test_table (id, value) VALUES (1, 'This is the test data')
     single_transaction: yes
