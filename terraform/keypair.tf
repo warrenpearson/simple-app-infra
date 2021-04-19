@@ -5,5 +5,5 @@ resource "tls_private_key" "key_gen" {
 
 resource "aws_key_pair" "tf_key" {
   key_name   = "tf_key"
-  public_key = "${tls_private_key.key_gen.public_key_openssh}"
+  public_key = tls_private_key.key_gen.public_key_openssh
 }
