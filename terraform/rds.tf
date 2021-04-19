@@ -5,8 +5,8 @@ resource "aws_db_instance" "tf_rds" {
   engine_version    = "8.0.20"
   instance_class    = var.rds_instance_type
   name              = "tf_rds"
-  username          = "admin"
-  password          = "X9Kr8REPKhbQa5Qw"
+  username          = var.db_username
+  password          = var.db_password
   skip_final_snapshot = true
   availability_zone = var.availability_zone
   vpc_security_group_ids = [aws_security_group.tf_rds_sg.id]
@@ -38,4 +38,14 @@ resource "aws_security_group" "tf_rds_sg" {
 
 output "tf_rds_endpoint" {
   value = aws_db_instance.tf_rds.endpoint
+}
+
+output "tf_rds_password" {
+  value = aws_db_instance.tf_rds.password
+  sensitive = true
+}
+
+output "tf_rds_username" {
+  value = aws_db_instance.tf_rds.username
+  sensitive = true
 }
