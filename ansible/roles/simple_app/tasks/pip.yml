@@ -1,4 +1,4 @@
 ---
-- name: Install pymysql
+- name: Install pip modules
   pip:
-    name: PyMySQL
+    requirements: /opt/app/simple-flask-app/requirements.txt

@@ -1,0 +1,10 @@
+---
+- name: Run stop script
+  command: /opt/app/simple-flask-app/stop.sh
+  args:
+    chdir: /opt/app/simple-flask-app
+
+- name: Run start script
+  command: /opt/app/simple-flask-app/start.sh
+  args:
+    chdir: /opt/app/simple-flask-app
