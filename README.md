@@ -2,11 +2,13 @@
 
 This project was originally intended to set up EC2, RDS and security groups for a simple app via `terraform`. Over time, it grew to include the accompanying `ansible` for deploying the app to that infra.
 
-### terraform
+## Create infrastructure
 
-Create infra:
+Create infra via terraform:
 
 ```bash
+cd terraform
+
 terraform init
 
 terraform plan
@@ -19,6 +21,8 @@ Extract ssh private key:
 ```bash
 ./make_pem.sh
 ```
+
+## Validate infrastructure and connectivity
 
 Log onto the box and check connectivity:
 
@@ -33,15 +37,22 @@ telnet <rds_hostname> 3306
 exit
 ```
 
-Populate ansible config with outputs:
+## Run ansible
+
+First, populate the ansible config with outputs:
 
 This script writes the EC2 box's public ip to the ansible `hosts` file, and updates the `roles/simple_app/defaults/main.yml` with the database parameters. N.B. the script has a dependency on `gron` <https://github.com/TomNomNom/gron>.
 
 ```bash
 ./set_ansible_values.sh
+
+cd ../ansible
+
+./run_ansible.sh
 ```
 
-Remove infra:
+
+## Remove infra:
 
 ```bash
 terraform destroy
@@ -50,7 +61,3 @@ terraform destroy
 # requires re-running terraform init on a following run
 git clean -xdf
 ```
-
-### ansible
-
-TBD

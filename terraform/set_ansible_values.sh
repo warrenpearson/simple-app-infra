@@ -2,7 +2,7 @@
 
 # defaults
 echo "---" > ../ansible/roles/simple_app/defaults/main.yml
-echo "http_port: 80" >> ../ansible/roles/simple_app/defaults/main.yml
+echo "http_port: 8080" >> ../ansible/roles/simple_app/defaults/main.yml
 
 db_host=`terraform output| grep tf_rds_endpoint|cut -d\" -f2|sed -e 's/:3306//'`
 db_user=`terraform show --json |gron |grep tf_rds_username.value |cut -d\" -f2`
