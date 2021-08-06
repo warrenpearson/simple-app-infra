@@ -15,3 +15,11 @@
   template:
     src: config.yml.j2
     dest: "/opt/app/simple-flask-app/config/config.yml"
+
+- name: Create logfile
+  ansible.builtin.file:
+    path: /opt/app/simple-flask-app/app.log
+    state: touch
+    owner: ubuntu
+    group: ubuntu
+    mode: '0744'
