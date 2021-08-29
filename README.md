@@ -44,11 +44,13 @@ First, populate the ansible config with outputs:
 This script writes the EC2 box's public ip to the ansible `hosts` file, and updates the `roles/simple_app/defaults/main.yml` with the database parameters. N.B. the script has a dependency on `gron` <https://github.com/TomNomNom/gron>.
 
 ```bash
+# N.B. we are still in the terraform directory
+
 ./set_ansible_values.sh
 
 cd ../ansible
 
-./run_ansible.sh
+./run_ansible.sh ../terraform/tf.pem
 ```
 
 
