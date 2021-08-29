@@ -16,5 +16,6 @@
     query:
     - DROP TABLE IF EXISTS test_table
     - CREATE TABLE test_table(id INT, value VARCHAR(255))
-    - INSERT INTO test_table (id, value) VALUES (1, 'This is the test data')
+    - INSERT INTO test_table (id, value) VALUES (1, 'This is test data')
+    - INSERT INTO test_table (id, value) VALUES (2, 'This is also test data')
     single_transaction: yes

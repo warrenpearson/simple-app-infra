@@ -1,10 +1,14 @@
 ---
 - name: Run stop script
-  command: /opt/app/simple-flask-app/stop.sh
-  args:
+  command:
     chdir: /opt/app/simple-flask-app
+    cmd: ./stop.sh
+  become: yes
+  become_user: ubuntu
 
 - name: Run start script
-  command: /opt/app/simple-flask-app/start.sh
-  args:
+  command:
     chdir: /opt/app/simple-flask-app
+    cmd: ./start.sh
+  become: yes
+  become_user: ubuntu
