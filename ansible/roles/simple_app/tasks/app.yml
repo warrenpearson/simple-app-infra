@@ -1,7 +1,7 @@
 ---
 - name: Create app directory
   file:
-    path: /opt/app
+    path: /opt/app/simple_flask_app
     state: directory
     owner: ubuntu
     group: ubuntu
@@ -9,19 +9,11 @@
 - name: Clone git repo
   git:
     repo: https://github.com/warrenpearson/simple-flask-app.git
-    dest: /opt/app/simple-flask-app
+    dest: /opt/app/simple_flask_app
   become: yes
   become_user: ubuntu
   
 - name: Generate app config
   template:
     src: config.yml.j2
-    dest: "/opt/app/simple-flask-app/config/config.yml"
-
-- name: Create logfile
-  file:
-    path: /opt/app/simple-flask-app/app.log
-    state: touch
-    owner: ubuntu
-    group: ubuntu
-    mode: '0744'
+    dest: "/opt/app/simple_flask_app/config/config.yml"
