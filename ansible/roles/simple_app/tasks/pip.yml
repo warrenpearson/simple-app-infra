@@ -1,4 +1,4 @@
 ---
 - name: Install pip modules
   pip:
-    requirements: /opt/app/simple-flask-app/requirements.txt
+    requirements: /opt/app/simple_flask_app/requirements.txt
